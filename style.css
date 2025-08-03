@@ -39,6 +39,11 @@ header .logo img {
     margin-right: 10px;
 }
 
+/* Hide the header */
+header.hidden {
+    transform: translateY(-100%);
+}
+
 nav a {
     color: #F5F5F5;
     margin-left: 20px;

@@ -134,5 +134,30 @@
             hero.style.paddingTop = `${headerHeight}px`;
         });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector("header");
+            let lastScrollY = window.scrollY;
+    
+            const handleScroll = () => {
+                if (window.innerWidth <= 768) { // Only apply on mobile
+                    if (window.scrollY > lastScrollY) {
+                        // Scrolling down
+                        header.classList.add("hidden");
+                    } else {
+                        // Scrolling up
+                        header.classList.remove("hidden");
+                    }
+                } else {
+                    // Ensure the header is always visible on larger screens
+                    header.classList.remove("hidden");
+                }
+                lastScrollY = window.scrollY;
+            };
+    
+            window.addEventListener("scroll", handleScroll);
+            window.addEventListener("resize", handleScroll); // Recheck on window resize
+        });
+    </script>
 </body>
 </html>
