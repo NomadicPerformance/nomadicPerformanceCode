@@ -74,5 +74,15 @@
     <footer>
         <p>© 2025 Nomadic Performance | Live Free, Thrive Wild</p>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector("header");
+            const hero = document.querySelector(".hero");
+    
+            // Get the height of the header and apply it as padding to the hero section
+            const headerHeight = header.offsetHeight;
+            hero.style.paddingTop = `${headerHeight}px`;
+        });
+    </script>
 </body>
 </html>
